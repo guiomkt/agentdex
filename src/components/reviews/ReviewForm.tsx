@@ -87,7 +87,7 @@ export function ReviewForm({ agentId, onSuccess, onCancel }: ReviewFormProps) {
           id="comment"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
-          className="w-full bg-neutral-dark rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary h-32"
+          className="text-sm md:text-base w-full bg-neutral-dark rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary h-32"
           placeholder="Compartilhe sua experiência com este agente..."
           required
         />

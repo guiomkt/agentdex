@@ -100,7 +100,7 @@ export function ReviewList({ agentId }: ReviewListProps) {
                   `https://source.unsplash.com/random/40x40?avatar&sig=${review.id}`
                 }
                 alt={`${review.profiles.username}'s avatar`}
-                className="w-10 h-10 rounded-full"
+                className="w-10 h-10 rounded-full md:block hidden"
               />
               <div>
                 <h4 className="font-medium">{review.profiles.username}</h4>

@@ -290,7 +290,7 @@ export function Profile() {
 
         {/* Profile Header */}
         <div className="bg-neutral rounded-xl p-6 mb-8">
-          <div className="flex items-start justify-between">
+          <div className="flex flex-col md:flex-row items-start justify-between">
             <div className="flex items-center gap-4">
               {/* <img
                 src={profile.avatar_url || `https://source.unsplash.com/random/100x100?avatar`}
@@ -307,11 +307,11 @@ export function Profile() {
                 </p>
               </div>
             </div>
-            <div className="flex gap-2">
-              <Button variant="secondary" size="sm">
+            <div className="flex gap-2 mt-4 md:mt-0">
+              {/* <Button variant="secondary" size="sm">
                 <Settings className="h-4 w-4 mr-2" />
                 Configurações
-              </Button>
+              </Button> */}
               <Button variant="secondary" size="sm" onClick={handleLogout}>
                 <LogOut className="h-4 w-4 mr-2" />
                 Sair
@@ -324,7 +324,7 @@ export function Profile() {
         <div className="mb-6">
           <div className="flex gap-4 border-b border-neutral">
             <button
-              className={`pb-4 px-2 text-lg font-medium ${
+              className={`pb-4 px-2 text-sm md:text-lg font-medium ${
                 activeTab === 'agents'
                   ? 'text-primary border-b-2 border-primary'
                   : 'text-gray-400'
@@ -334,7 +334,7 @@ export function Profile() {
               Meus Agentes
             </button>
             <button
-              className={`pb-4 px-2 text-lg font-medium ${
+              className={`pb-4 px-2 text-sm md:text-lg font-medium ${
                 activeTab === 'agencies'
                   ? 'text-primary border-b-2 border-primary'
                   : 'text-gray-400'
@@ -344,7 +344,7 @@ export function Profile() {
               Minhas Agências
             </button>
             <button
-              className={`pb-4 px-2 text-lg font-medium ${
+              className={`pb-4 px-2 text-sm md:text-lg font-medium ${
                 activeTab === 'reviews'
                   ? 'text-primary border-b-2 border-primary'
                   : 'text-gray-400'
@@ -359,17 +359,25 @@ export function Profile() {
         {/* Agents List */}
         {activeTab === 'agents' && (
           <div className="space-y-6">
-            <div className="flex justify-between items-center">
-              <h2 className="text-xl font-semibold">Meus Agentes ({agents.length})</h2>
+            <div className="flex flex-col gap-2 md:gap-0 md:flex-row justify-between md:items-center">
+              <h2 className="text-base md:text-xl font-semibold">Meus Agentes ({agents.length})</h2>
+              <div className='block md:hidden'>
+              <Button variant="primary" size="xs" onClick={() => navigate('/submit')}>
+                <Plus className="h-4 w-4 mr-2" />
+                Novo Agente
+              </Button>
+              </div>
+              <div className='hidden md:block'>
               <Button variant="primary" onClick={() => navigate('/submit')}>
                 <Plus className="h-4 w-4 mr-2" />
                 Novo Agente
               </Button>
+              </div>
             </div>
-            
+
             {agents.length === 0 ? (
               <div className="text-center py-12 bg-neutral rounded-xl">
-                <p className="text-gray-400 mb-4">
+                <p className="text-sm md:text-base text-gray-400 mb-4">
                   Você ainda não tem nenhum agente cadastrado
                 </p>
                 <Button variant="primary" onClick={() => navigate('/submit')}>
@@ -460,23 +468,39 @@ export function Profile() {
         {/* Agencies List */}
         {activeTab === 'agencies' && (
           <div className="space-y-6">
-            <div className="flex justify-between items-center">
-              <h2 className="text-xl font-semibold">Minhas Agências ({agencies.length})</h2>
-              <Button variant="primary" onClick={() => navigate('/submit-agency')}>
-                <Plus className="h-4 w-4 mr-2" />
-                Nova Agência
-              </Button>
+            <div className="flex gap-2 md:gap-0 flex-col md:flex-row justify-between md:items-center">
+              <h2 className="text-base md:text-xl font-semibold">Minhas Agências ({agencies.length})</h2>
+              <div className='block md:hidden'>
+                <Button variant="primary" size="xs" onClick={() => navigate('/submit-agency')}>
+                  <Plus className="h-4 w-4 mr-2" />
+                  Nova Agência
+                </Button>
+              </div>
+              <div className='hidden md:block'>
+                <Button variant="primary" size="sm" onClick={() => navigate('/submit-agency')}>
+                  <Plus className="h-4 w-4 mr-2" />
+                  Nova Agência
+                </Button>
+              </div>
             </div>
 
             {agencies.length === 0 ? (
               <div className="text-center py-12 bg-neutral rounded-xl">
-                <p className="text-gray-400 mb-4">
+                <p className="text-sm md:text-base text-gray-400 mb-4">
                   Você ainda não tem nenhuma agência cadastrada
                 </p>
-                <Button variant="primary" onClick={() => navigate('/submit-agency')}>
-                  <Building2 className="h-4 w-4 mr-2" />
-                  Cadastrar Agência
-                </Button>
+                <div className='hidden md:block'>
+                  <Button variant="primary" onClick={() => navigate('/submit-agency')}>
+                    <Building2 className="h-4 w-4 mr-2" />
+                    Cadastrar Agência
+                  </Button>
+                </div>
+                <div className='block md:hidden'>
+                  <Button variant="primary" size="sm" onClick={() => navigate('/submit-agency')}>
+                    <Building2 className="h-4 w-4 mr-2" />
+                    Cadastrar Agência
+                  </Button>
+                </div>
               </div>
             ) : (
               agencies.map((agency) => (
@@ -575,7 +599,7 @@ export function Profile() {
                         `https://source.unsplash.com/random/100x100?${review.agent ? 'ai' : 'company'}&sig=${review.id}`
                       }
                       alt={review.agent?.name || review.agency?.name}
-                      className="w-16 h-16 rounded-lg object-cover"
+                      className="hidden md:block w-16 h-16 rounded-lg object-cover"
                     />
                     <div className="flex-1">
                       <div className="flex items-start justify-between">
@@ -596,25 +620,42 @@ export function Profile() {
                                 />
                               ))}
                             </div>
-                            <span className="text-sm text-gray-400">
+                            <span className="text-xs md:text-sm text-gray-400">
                               {new Date(review.created_at).toLocaleDateString('pt-BR')}
                             </span>
                           </div>
-                          <p className="text-gray-400">{review.comment}</p>
+                          <p className="text-sm md:text-base text-gray-400">{review.comment}</p>
                         </div>
-                        <Button
-                          variant="secondary"
-                          size="sm"
-                          onClick={() =>
-                            navigate(
-                              review.agent
-                                ? `/agents/${review.agent.id}`
-                                : `/agencies/${review.agency?.id}`
-                            )
-                          }
-                        >
-                          Ver {review.agent ? 'Agente' : 'Agência'}
-                        </Button>
+                        <div className='hidden md:block'>
+                          <Button
+                            variant="secondary"
+                            size="sm"
+                            onClick={() =>
+                              navigate(
+                                review.agent
+                                  ? `/agents/${review.agent.id}`
+                                  : `/agencies/${review.agency?.id}`
+                              )
+                            }
+                          >
+                            Ver {review.agent ? 'Agente' : 'Agência'}
+                          </Button>
+                        </div>
+                        <div className='block md:hidden'>
+                          <Button
+                            variant="secondary"
+                            size="xs"
+                            onClick={() =>
+                              navigate(
+                                review.agent
+                                  ? `/agents/${review.agent.id}`
+                                  : `/agencies/${review.agency?.id}`
+                              )
+                            }
+                          >
+                            Ver {review.agent ? 'Agente' : 'Agência'}
+                          </Button>
+                        </div>
                       </div>
                     </div>
                   </div>

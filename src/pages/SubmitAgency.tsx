@@ -257,7 +257,7 @@ export function SubmitAgency() {
             <ArrowLeft className="h-4 w-4 mr-2" />
             Voltar
           </Button>
-          <h1 className="text-2xl font-bold">Cadastrar Agência</h1>
+          <h1 className="text-xl md:text-2xl font-bold">Cadastrar Agência</h1>
         </div>
 
         {error && (
@@ -449,7 +449,7 @@ export function SubmitAgency() {
 
           <div>
             <label className="block text-sm font-medium mb-2">Áreas de Atuação</label>
-            <p className="text-sm text-gray-400 mb-4">
+            <p className="text-xs md:text-sm text-gray-400 mb-4">
               Selecione as áreas em que sua agência oferece soluções de IA
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
@@ -476,7 +476,7 @@ export function SubmitAgency() {
                       }
                     }}
                   />
-                  <span className="text-sm">{specialty}</span>
+                  <span className="text-xs md:text-sm">{specialty}</span>
                 </label>
               ))}
             </div>

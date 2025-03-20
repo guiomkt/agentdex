@@ -142,7 +142,7 @@ export function AgencyDetails() {
         {/* Agency Profile */}
         <div className="bg-neutral rounded-xl overflow-hidden">
           {/* Cover Image */}
-          <div className="h-48 overflow-hidden">
+          <div className="h-40 md:h-48 overflow-hidden">
             <img
               src={agency.cover_url || agency.logo_url || `https://source.unsplash.com/random/1200x400?company&sig=${agency.id}`}
               alt={`${agency.name} cover`}
@@ -157,21 +157,21 @@ export function AgencyDetails() {
                 <img
                   src={agency.logo_url || `https://source.unsplash.com/random/400x400?company&sig=${agency.id}`}
                   alt={agency.name}
-                  className="w-24 h-24 rounded-xl object-contain -mt-16 border-4 border-neutral"
+                  className="hidden md:block w-24 h-24 rounded-xl object-contain -mt-16 border-4 border-neutral"
                 />
                 <div>
                   <div className="flex items-center gap-2">
-                    <h1 className="text-3xl font-bold">{agency.name}</h1>
+                    <h1 className="text-2xl md:text-3xl font-bold">{agency.name}</h1>
                     {agency.verification_status === 'approved' && (
                       <Verified className="h-6 w-6 text-primary" />
                     )}
                   </div>
-                  <div className="flex items-center gap-4 mt-2 text-gray-400">
-                    <div className="flex items-center gap-1">
+                  <div className="flex-column md:flex items-center gap-4 mt-2 text-gray-400">
+                    <div className="text-sm md:text-base flex items-center gap-1">
                       <MapPin className="h-4 w-4" />
                       <span>{agency.location}</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="text-sm md:text-base flex items-center gap-1">
                       <Users className="h-4 w-4" />
                       <span>{agency.total_clients}+ clientes</span>
                     </div>
@@ -208,7 +208,7 @@ export function AgencyDetails() {
             {/* Description */}
             <div className="mt-8">
               <h2 className="text-xl font-semibold mb-4">Sobre</h2>
-              <p className="text-gray-400">{agency.description}</p>
+              <p className="text-xs md:text-base text-gray-400">{agency.description}</p>
             </div>
 
             {/* Specialties */}
@@ -218,7 +218,7 @@ export function AgencyDetails() {
                 {agency.specialties.map((specialty, index) => (
                   <span
                     key={index}
-                    className="bg-neutral-dark px-4 py-2 rounded-lg text-sm"
+                    className="bg-neutral-dark px-4 py-2 rounded-lg text-xs md:text-sm"
                   >
                     {specialty}
                   </span>

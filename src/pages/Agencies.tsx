@@ -147,7 +147,7 @@ export function Agencies() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
           <div>
             <h1 className="text-3xl font-bold mb-2">Agências</h1>
-            <p className="text-gray-400">
+            <p className="text-sm md:text-base text-gray-400">
               Encontre as melhores agências especializadas em IA
             </p>
           </div>
@@ -158,7 +158,7 @@ export function Agencies() {
                 placeholder="Buscar por nome, local ou especialidade..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full sm:w-80 bg-neutral rounded-lg pl-4 pr-10 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="text-sm md:text-base w-full sm:w-80 bg-neutral rounded-lg pl-4 pr-10 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
               />
               <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
             </div>
@@ -317,12 +317,12 @@ export function Agencies() {
                               <Verified className="h-5 w-5 text-primary" />
                             )}
                           </div>
-                          <div className="flex items-center gap-2 text-gray-400 mt-1">
+                          <div className="text-xs md:text-base flex items-center gap-2 text-gray-400 mt-1">
                             <MapPin className="h-4 w-4" />
                             <span>{agency.location}</span>
                           </div>
-                          <p className="text-gray-400 mt-2 line-clamp-2">{agency.description}</p>
-                          <div className="flex flex-wrap gap-2 mt-4">
+                          <p className="text-sm md:text-base text-gray-400 mt-4 md:mt-2 line-clamp-2">{agency.description}</p>
+                          <div className="hidden md:block flex flex-wrap gap-2 mt-4">
                             {agency.specialties.map((specialty, index) => (
                               <span
                                 key={index}

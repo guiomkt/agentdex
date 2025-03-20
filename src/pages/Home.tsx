@@ -209,15 +209,15 @@ export function Home() {
       <section className="py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold mb-6">
               Descubra os Melhores{' '}
               <span className="text-primary">Agentes de IA</span>
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-400">
+            <p className="text-sm md:text-xl lg:text-2xl mb-8 text-gray-400">
               Seu diretório completo para encontrar, comparar e implementar agentes de
               IA para otimizar seu fluxo de trabalho.
             </p>
-            
+
             {/* Search Bar */}
             <div className="max-w-2xl mx-auto relative" ref={searchRef}>
               <form onSubmit={handleSearch} className="relative">
@@ -340,7 +340,7 @@ export function Home() {
                       <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
                         <div className="min-w-0">
                           <h3 className="text-xl font-semibold mb-1">{agent.name}</h3>
-                          <p className="text-gray-400 line-clamp-2">{agent.description}</p>
+                          <p className="text-sm md:text-base text-gray-400 line-clamp-2">{agent.description}</p>
                           <div className="flex flex-wrap items-center gap-4 mt-2">
                             <button
                               onClick={(e) => {
@@ -394,7 +394,7 @@ export function Home() {
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Tem um agente de IA?
           </h2>
-          <p className="text-lg md:text-xl mb-8 text-gray-400">
+          <p className="text-base md:text-xl mb-8 text-gray-400">
             Adicione seu agente ao maior diretório de IA do Brasil
           </p>
           <Link to="/submit">

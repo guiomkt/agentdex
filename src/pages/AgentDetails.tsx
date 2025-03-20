@@ -166,7 +166,7 @@ export function AgentDetails() {
               alt={`${agent.name} cover`}
               className="w-full h-48 sm:h-64 object-cover"
             />
-            
+
             {/* Desktop Logo and Info Overlay */}
             <div className="hidden md:block absolute left-0 right-0 bottom-0 p-6 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
               <div className="flex items-end gap-6">
@@ -181,14 +181,13 @@ export function AgentDetails() {
 
                 <div className="flex-1">
                   <h1 className="text-3xl font-bold mb-2 text-white">{agent.name}</h1>
-                  
+
                   <div className="flex flex-wrap items-center gap-3">
                     <div className="flex items-center">
                       <Star className="h-4 w-4 text-primary mr-1" />
                       <span className="text-white">{averageRating ?? '---'}</span>
                       <span className="text-gray-300 ml-1">({totalReviews} avaliações)</span>
                     </div>
-                    
                     <span className={`px-3 py-1 rounded-full text-sm ${
                       agent.price_type === 'free' ? 'bg-green-900/20 text-green-500' :
                       agent.price_type === 'paid' ? 'bg-primary/20 text-primary' :
@@ -197,7 +196,6 @@ export function AgentDetails() {
                       {agent.price_type === 'free' ? 'Gratuito' :
                        agent.price_type === 'paid' ? 'Pago' : 'Freemium'}
                     </span>
-                    
                     {agent.starting_price !== null && (
                       <span className="text-lg font-semibold text-primary">
                         A partir de {formatPrice(agent.starting_price)}
@@ -212,14 +210,14 @@ export function AgentDetails() {
           {/* Mobile Info */}
           <div className="md:hidden p-6">
             <h1 className="text-2xl font-bold mb-4">{agent.name}</h1>
-            
+
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <div className="flex items-center">
                 <Star className="h-4 w-4 text-primary mr-1" />
                 <span>{averageRating ?? '---'}</span>
                 <span className="text-gray-300 ml-1">({totalReviews} avaliações)</span>
               </div>
-              
+
               <span className={`px-3 py-1 rounded-full text-sm ${
                 agent.price_type === 'free' ? 'bg-green-900/20 text-green-500' :
                 agent.price_type === 'paid' ? 'bg-primary/20 text-primary' :
@@ -228,7 +226,7 @@ export function AgentDetails() {
                 {agent.price_type === 'free' ? 'Gratuito' :
                  agent.price_type === 'paid' ? 'Pago' : 'Freemium'}
               </span>
-              
+
               {agent.starting_price !== null && (
                 <span className="text-lg font-semibold text-primary">
                   A partir de {formatPrice(agent.starting_price)}
@@ -281,7 +279,7 @@ export function AgentDetails() {
           <div className="md:hidden px-6 pb-6">
             <div className="border-t border-neutral-dark pt-6">
               <h2 className="text-xl font-semibold mb-4">Sobre</h2>
-              <p className="text-gray-400 whitespace-pre-wrap">{agent.description}</p>
+              <p className="text-xs text-gray-400 whitespace-pre-wrap">{agent.description}</p>
             </div>
           </div>
         </div>

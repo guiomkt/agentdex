@@ -161,7 +161,7 @@ export function Ranking() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
           <div>
             <h1 className="text-3xl font-bold mb-2">Ranking de Agentes</h1>
-            <p className="text-gray-400">Os agentes mais populares e bem avaliados da plataforma</p>
+            <p className="text-sm md:text-base text-gray-400">Os agentes mais populares e bem avaliados da plataforma</p>
           </div>
           <div className="flex flex-col sm:flex-row w-full md:w-auto gap-4">
             <Button
@@ -281,8 +281,8 @@ export function Ranking() {
                     <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
                       <div className="min-w-0">
                         <h3 className="text-xl font-semibold mb-1">{agent.name}</h3>
-                        <p className="text-gray-400 mb-2">por {agent.profiles.username}</p>
-                        <p className="text-gray-400 line-clamp-2">{agent.description}</p>
+                        <p className="text-gray-400 mb-2 capitalize">por {agent.profiles.username}</p>
+                        <p className="text-sm md:text-base text-gray-400 line-clamp-2">{agent.description}</p>
                         <div className="flex flex-wrap items-center gap-4 mt-4">
                           <span className="text-gray-400">{agent.category}</span>
                           {agent.average_rating && (
@@ -296,7 +296,7 @@ export function Ranking() {
                           )}
                         </div>
                       </div>
-                      <div className="flex flex-col items-start sm:items-end gap-2">
+                      <div className="hidden md:block flex flex-col items-start sm:items-end gap-2">
                         <span className={`px-3 py-1 rounded-full text-sm ${
                           agent.price_type === 'free'
                             ? 'bg-green-900/20 text-green-500'
