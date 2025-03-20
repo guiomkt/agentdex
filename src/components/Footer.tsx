@@ -11,7 +11,7 @@ export function Footer() {
               <Bot className="h-8 w-8 text-primary" />
               <span className="ml-2 text-xl font-bold">AgentDex</span>
             </Link>
-            <p className="mt-4 text-neutral-darker">
+            <p className="mt-4 text-white">
               O maior diretório de agentes de IA do Brasil
             </p>
           </div>
