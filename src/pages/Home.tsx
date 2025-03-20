@@ -340,7 +340,7 @@ export function Home() {
                       <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
                         <div className="min-w-0">
                           <h3 className="text-xl font-semibold mb-1">{agent.name}</h3>
-                          <p className="text-sm md:text-base text-gray-400 line-clamp-2">{agent.description}</p>
+                          <p className="text-sm md:text-base text-gray-400 line-clamp-2 md:max-w-3xl">{agent.description}</p>
                           <div className="flex flex-wrap items-center gap-4 mt-2">
                             <button
                               onClick={(e) => {
@@ -370,7 +370,7 @@ export function Home() {
                              agent.price_type === 'paid' ? 'Pago' : 'Freemium'}
                           </span>
                           {agent.starting_price !== null && (
-                            <span className="text-lg font-semibold text-primary">
+                            <span className="text-lg font-semibold text-primary md:w-full">
                               A partir de {formatPrice(agent.starting_price)}
                             </span>
                           )}

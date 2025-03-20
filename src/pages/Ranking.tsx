@@ -296,7 +296,7 @@ export function Ranking() {
                           )}
                         </div>
                       </div>
-                      <div className="hidden md:block flex flex-col items-start sm:items-end gap-2">
+                      <div className="hidden md:flex w-full flex flex-col items-start sm:items-end gap-2">
                         <span className={`px-3 py-1 rounded-full text-sm ${
                           agent.price_type === 'free'
                             ? 'bg-green-900/20 text-green-500'

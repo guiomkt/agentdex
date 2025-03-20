@@ -333,7 +333,7 @@ export function Agencies() {
                             ))}
                           </div>
                         </div>
-                        <div className="flex flex-col items-start sm:items-end gap-3">
+                        <div className="flex flex-col items-start sm:items-end gap-3 md:w-full">
                           <div className="flex items-center gap-2">
                             <Users className="h-5 w-5 text-primary" />
                             <span className="font-semibold">
